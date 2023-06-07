@@ -33,7 +33,18 @@ const handleSignIn = async (req,res) => {
     }
 }
 
+
+const getAllUsers = async (req,res) => {
+    try {
+        const answer = await User.find();
+
+        return res.status(200).json(answer);
+    } catch (error) {
+        return res.status(502).json(error);
+    }
+}
 module.exports = {
     handleSignIn,
-    handleSignUp
+    handleSignUp,
+    getAllUsers
 }
