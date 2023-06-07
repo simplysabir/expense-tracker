@@ -9,11 +9,8 @@ const expenseSchema = mongoose.Schema({
         type : Number,
         required : true,
     },
-    CreatedAt: Date.now()
 })
 
 const Expense = mongoose.model("Expense", expenseSchema);
 
-module.exports = {
-    Expense
-}
+module.exports = Expense;
