@@ -15,7 +15,7 @@ const getExpense = async (req,res) => {
     try {
         const answer = await Expense.find({});
 
-        res.status(200).json(answer);
+        res.status(200).send(answer);
     } catch (error) {
         return res.status(502).json(error);
     }
