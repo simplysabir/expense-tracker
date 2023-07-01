@@ -20,6 +20,15 @@ const getExpense = async (req,res) => {
         return res.status(502).json(error);
     }
 }
+const getTotalSpent = async (req,res) => {
+    try {
+        const answer = await Expense.find({});
+
+        res.status(200).send(answer.total_spent);
+    } catch (error) {
+        return res.status(502).json(error);
+    }
+}
 
 module.exports = {
     addExpense,
